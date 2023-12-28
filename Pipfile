@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
+ibm-db = {file = "https://files.pythonhosted.org/packages/ea/de/2046592821834ff8af19ebddfc5a02dd3f99a6ca396982ee4b0f37515cfd/ibm_db-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"}
+ibm-db-sa = "*"
+flask-migrate = "*"
+marshmallow = "*"
+ibm-db-alembic = "*"
+flask-marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+flask-restful = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

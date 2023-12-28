@@ -1,0 +1,51 @@
+// VIM REST CONSOLE - https://github.com/diepm/vim-rest-console
+// ctrj+j para rodar
+// exemplos:
+// https://raw.githubusercontent.com/diepm/vim-rest-console/master/sample.rest
+// https://raw.githubusercontent.com/diepm/vim-rest-console/master/sample_global.rest
+
+// Global definitions of the queries
+http://localhost:5000
+Accept: application/json
+-s # silencioso
+--
+
+# Raiz
+--
+GET /
+
+# Mostra todas as contas
+--
+GET /contas
+
+# Mosta uma conta por id
+--
+GET /contas/1
+
+# Cria uma conta
+--
+POST /contas
+{
+  "nome": "Itaú",
+  "resumo": "Conta física digital",
+  "valor": 1000
+}
+
+# Altera uma conta
+--
+PUT /contas/1
+{
+  "nome": "Itaú alterada",
+  "resumo": "Conta alterada",
+  "valor": 100
+}
+
+# Exlui uma conta
+--
+DELETE /contas/3
+
+# um teste
+https://jsonplaceholder.typicode.com
+GET /todos
+
+
