@@ -15,6 +15,7 @@ ibm-db-alembic = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 flask-restful = "*"
+marshmallow-enum = "*"
 
 [dev-packages]
 

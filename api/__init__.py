@@ -16,5 +16,5 @@ migration = Migrate(app, db)
 
 api = Api(app)
 
-from .models import conta_model # noqa (db init não funciona com partial import no topo do arquivo)
-from .views import conta_view
+from .models import conta_model, operacao_model # noqa (db init não funciona com partial import no topo do arquivo)
+from .views import conta_view, operacao_view

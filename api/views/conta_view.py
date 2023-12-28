@@ -64,5 +64,4 @@ class ContaDetail(Resource):
 
 
 
-
 api.add_resource(ContaDetail, '/contas/<int:id>')
