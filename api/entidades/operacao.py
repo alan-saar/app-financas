@@ -1,9 +1,10 @@
 class Operacao():
-    def __init__(self, nome, resumo, custo, tipo):
+    def __init__(self, nome, resumo, custo, tipo, conta):
         self.__nome = nome
         self.__resumo = resumo
         self.__custo = custo
         self.__tipo = tipo
+        self.__conta = conta
 
     @property
     def nome(self):
@@ -33,6 +34,14 @@ class Operacao():
     def tipo(self):
         return self.__tipo
 
-    @custo.setter
-    def custo(self, tipo):
+    @tipo.setter
+    def tipo(self, tipo):
         self.__tipo = tipo
+
+    @property
+    def conta(self):
+        return self.__conta
+
+    @conta.setter
+    def conta(self, conta):
+        self.__conta = conta

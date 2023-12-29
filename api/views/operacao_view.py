@@ -2,7 +2,7 @@ from flask_restful import Resource
 from ..schemas import operacao_schema
 from flask import jsonify, make_response, request
 from ..entidades import operacao
-from ..services import operacao_service
+from ..services import operacao_service, conta_service
 from api import api
 
 
@@ -22,9 +22,12 @@ class OperacaoList(Resource):
             resumo = request.json["resumo"]
             custo = request.json["custo"]
             tipo = request.json["tipo"]
+            conta = request.json["conta_id"]
+            if conta_service.listar_conta_id(conta) is None:
+                return make_response(jsonify("Conta não existe"), 404)
 
             nova_operacao = operacao.Operacao(
-                nome=nome, resumo=resumo, custo=custo, tipo=tipo
+                nome=nome, resumo=resumo, custo=custo, tipo=tipo, conta=conta
             )
             resultado = operacao_service.cadastrar_operacao(nova_operacao)
             return make_response(os.jsonify(resultado), 201)
@@ -51,8 +54,12 @@ class OperacaoDetail(Resource):
             resumo = request.json["resumo"]
             custo = request.json["custo"]
             tipo = request.json["tipo"]
+            conta = request.json["conta_id"]
+
+            if conta_service.listar_conta_id(conta) is None:
+                return make_response(jsonify("Conta não existe"), 404)
             operacao_nova = operacao.Operacao(
-                nome=nome, resumo=resumo, custo=custo, tipo=tipo
+                nome=nome, resumo=resumo, custo=custo, tipo=tipo, conta=conta
             )
             resultado = operacao_service.atualizar_operacao(operacao_bd, operacao_nova) # noqa
             return make_response(os.jsonify(resultado), 201)

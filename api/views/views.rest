@@ -57,7 +57,8 @@ POST /operacoes
   "nome": "NomeTeste",
   "resumo": "TesteResumo",
   "custo": 1000,
-  "tipo": "entrada"
+  "tipo": "entrada",
+  "conta_id": 2
 }
 
 # Recupera todas as operacoes
@@ -75,7 +76,8 @@ PUT /operacoes/1
   "nome": "Itaú alterada",
   "resumo": "operacao alterada",
   "custo": 100,
-  "tipo": "saida"
+  "tipo": "saida",
+  "conta_id": 1
 }
 
 # Exlui uma operacao
