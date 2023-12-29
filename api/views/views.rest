@@ -22,7 +22,7 @@ GET /contas
 
 # Mosta uma conta por id
 --
-GET /contas/1
+GET /contas/4
 
 # Cria uma conta
 --
@@ -35,11 +35,11 @@ POST /contas
 
 # Altera uma conta
 --
-PUT /contas/1
+PUT /contas/4
 {
   "nome": "Itaú alterada",
   "resumo": "Conta alterada",
-  "valor": 100
+  "valor": 1000
 }
 
 # Exlui uma conta
@@ -54,11 +54,11 @@ GET /todos
 --
 POST /operacoes
 {
-  "nome": "NomeTeste",
-  "resumo": "TesteResumo",
-  "custo": 1000,
+  "nome": "Pix",
+  "resumo": "Treta",
+  "custo": 100,
   "tipo": "entrada",
-  "conta_id": 2
+  "conta_id": 4
 }
 
 # Recupera todas as operacoes
@@ -71,15 +71,15 @@ GET /operacoes/1
 
 # Altera uma operacao
 --
-PUT /operacoes/1
+PUT /operacoes/8
 {
-  "nome": "Itaú alterada",
-  "resumo": "operacao alterada",
+  "nome": "Débito",
+  "resumo": "Pagamento Água",
   "custo": 100,
   "tipo": "saida",
-  "conta_id": 1
+  "conta_id": 4
 }
 
 # Exlui uma operacao
 --
-DELETE /operacoes/3
+DELETE /operacoes/17

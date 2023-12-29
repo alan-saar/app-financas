@@ -17,3 +17,4 @@ class Operacao(db.Model):
     custo = db.Column(db.Float, nullable=False)
     tipo = db.Column(db.Enum(TipoOperacao), nullable=False)
     conta_id = db.Column(db.Integer, db.ForeignKey("VOIP.conta.id"))
+    conta = db.relationship("Conta", backref=db.backref("operacoes", lazy="dynamic")) # noqa
