@@ -83,3 +83,13 @@ PUT /operacoes/8
 # Exlui uma operacao
 --
 DELETE /operacoes/17
+
+# Cadastrar usuário
+--
+POST /usuarios
+{
+  "nome": "admin",
+  "email": "admin@email.com",
+  "senha": "letmein"
+}
+

@@ -16,6 +16,8 @@ flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 flask-restful = "*"
 marshmallow-enum = "*"
+passlib = "*"
+flask-jwt-extended = "*"
 
 [dev-packages]
 

@@ -3,10 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_marshmallow import Marshmallow
 from flask_restful import Api
+from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
 
 app.config.from_object("config")
+jwt = JWTManager(app)
 
 db = SQLAlchemy(app)
 
@@ -16,5 +18,5 @@ migration = Migrate(app, db)
 
 api = Api(app)
 
-from .models import conta_model, operacao_model # noqa (db init não funciona com partial import no topo do arquivo)
-from .views import conta_view, operacao_view # noqa
+from .models import conta_model, operacao_model, usuario_model # noqa (db init não funciona com partial import no topo do arquivo)
+from .views import conta_view, operacao_view, usuario_view # noqa
