@@ -1,10 +1,11 @@
 class Operacao():
-    def __init__(self, nome, resumo, custo, tipo, conta):
+    def __init__(self, nome, resumo, custo, tipo, conta, data):
         self.__nome = nome
         self.__resumo = resumo
         self.__custo = custo
         self.__tipo = tipo
         self.__conta = conta
+        self.__data = data
 
     @property
     def nome(self):
@@ -45,3 +46,11 @@ class Operacao():
     @conta.setter
     def conta(self, conta):
         self.__conta = conta
+
+    @property
+    def data(self):
+        return self.__data
+
+    @data.setter
+    def data(self, data):
+        self.__data = data

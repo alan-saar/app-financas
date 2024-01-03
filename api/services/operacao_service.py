@@ -3,8 +3,8 @@ from ..models import operacao_model, conta_model
 from ..services import conta_service
 
 
-def listar_operacoes(usuario):
-    return operacao_model.Operacao.query.join(conta_model.Conta).filter_by(usuario_id=usuario).all()
+def listar_operacoes():
+    return operacao_model.Operacao.query.all()
 
 
 def listar_operacao_id(id):
@@ -17,6 +17,7 @@ def cadastrar_operacao(operacao):
         resumo=operacao.resumo,
         custo=operacao.custo,
         tipo=operacao.tipo,
+        data=operacao.data,
         conta_id=operacao.conta
     )
     db.session.add(operacao_bd)
@@ -31,6 +32,7 @@ def atualizar_operacao(operacao, operacao_nova):
     operacao.resumo = operacao_nova.resumo
     operacao.custo = operacao_nova.custo
     operacao.tipo = operacao_nova.tipo
+    operacao.data = operacao_nova.data
     operacao.conta_id = operacao_nova.conta
     db.session.commit()
     conta_service.altera_saldo_conta(operacao.conta_id, operacao, 2, valor_antigo)
