@@ -16,6 +16,6 @@ class Operacao(db.Model):
     resumo = db.Column(db.String(100), nullable=False)
     custo = db.Column(db.Float, nullable=False)
     tipo = db.Column(db.Enum(TipoOperacao), nullable=False)
-    data = db.Column(db.Date, nullable=False)
+    data = db.Column("data_operacao", db.Date, nullable=False)
     conta_id = db.Column(db.Integer, db.ForeignKey("VOIP.conta.id"))
     conta = db.relationship("Conta", backref=db.backref("operacoes", lazy="dynamic"))

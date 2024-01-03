@@ -20,7 +20,6 @@ CREATE TABLE "VOIP".operacao (
         resumo VARCHAR(100) NOT NULL,
         custo FLOAT NOT NULL,
         tipo VARCHAR(30) NOT NULL,
-        data DATE NOT NULL
         PRIMARY KEY (id)
 );
 
@@ -46,7 +45,7 @@ ALTER TABLE voip.conta DROP COLUMN resumo;
 ALTER TABLE voip.conta DROP COLUMN usuario_id;
 CALL admin_cmd('REORG table voip.conta');
 
-ALTER TABLE voip.operacao ADD COLUMN DATA DATE;
+ALTER TABLE voip.operacao ADD COLUMN data_operacao DATE;
 CALL admin_cmd('REORG table voip.operacao')
 
 
