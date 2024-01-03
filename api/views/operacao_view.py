@@ -4,14 +4,16 @@ from flask import jsonify, make_response, request
 from ..entidades import operacao
 from ..services import operacao_service, conta_service
 from api import api
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import get_jwt_identity, jwt_required
+from ..decorators.autorizacao import user_operacao
 
 
 class OperacaoList(Resource):
 
     @jwt_required()
     def get(self):
-        operacoes = operacao_service.listar_operacoes()
+        usuario_logado = get_jwt_identity()
+        operacoes = operacao_service.listar_operacoes(usuario=usuario_logado)
         os = operacao_schema.OperacaoSchema(many=True)
         return make_response(os.jsonify(operacoes), 201)
 
@@ -39,7 +41,7 @@ class OperacaoList(Resource):
 
 class OperacaoDetail(Resource):
 
-    @jwt_required()
+    @user_operacao
     def get(self, id):
         operacao = operacao_service.listar_operacao_id(id)
         if operacao is None:
@@ -47,7 +49,7 @@ class OperacaoDetail(Resource):
         os = operacao_schema.OperacaoSchema()
         return make_response(os.jsonify(operacao), 200)
 
-    @jwt_required()
+    @user_operacao
     def put(self, id):
         operacao_bd = operacao_service.listar_operacao_id(id)
         if operacao_bd is None:
@@ -71,7 +73,7 @@ class OperacaoDetail(Resource):
             resultado = operacao_service.atualizar_operacao(operacao_bd, operacao_nova) # noqa
             return make_response(os.jsonify(resultado), 201)
 
-    @jwt_required()
+    @user_operacao
     def delete(self, id):
         operacao = operacao_service.listar_operacao_id(id)
         if operacao is None:

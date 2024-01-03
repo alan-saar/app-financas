@@ -1,8 +1,9 @@
 class Conta():
-    def __init__(self, nome, resumo, valor):
+    def __init__(self, nome, resumo, valor, usuario):
         self.__nome = nome
         self.__resumo = resumo
         self.__valor = valor
+        self.__usuario = usuario
 
     @property
     def nome(self):
@@ -27,3 +28,11 @@ class Conta():
     @valor.setter
     def valor(self, valor):
         self.__valor = valor
+
+    @property
+    def usuario(self):
+        return self.__usuario
+
+    @usuario.setter
+    def usuario(self, usuario):
+        self.__usuario = usuario

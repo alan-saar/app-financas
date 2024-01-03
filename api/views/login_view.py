@@ -21,7 +21,7 @@ class LoginList(Resource):
             usuario_bd = usuario_service.listar_usuario_email(email)
             if usuario_bd and usuario_bd.decripto_senha(senha):
                 access_token = create_access_token(
-                    identity=usuario_bd.id, expires_delta=timedelta(seconds=60)
+                    identity=usuario_bd.id, expires_delta=timedelta(minutes=15)
                 )
                 refresh_token = create_refresh_token(identity=usuario_bd.id)
                 return make_response(

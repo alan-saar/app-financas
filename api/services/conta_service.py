@@ -2,8 +2,8 @@ from api import db, app
 from ..models import conta_model
 
 
-def listar_contas():
-    contas = conta_model.Conta.query.all()
+def listar_contas(usuario):
+    contas = conta_model.Conta.query.filter_by(usuario_id=usuario)
     return contas
 
 
@@ -13,7 +13,7 @@ def listar_conta_id(id):
 
 def cadastrar_conta(conta):
     conta_bd = conta_model.Conta(
-        nome=conta.nome, resumo=conta.resumo, valor=conta.valor
+        nome=conta.nome, resumo=conta.resumo, valor=conta.valor, usuario_id=conta.usuario
     )  # noqa
     db.session.add(conta_bd)
     db.session.commit()

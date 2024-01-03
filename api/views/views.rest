@@ -6,7 +6,7 @@
 
 // Global definitions of the queries
 http://localhost:5000
-token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNDIzNjk3MiwianRpIjoiNmIwOWY0YTItZmJkZS00MzQ2LWEzOWEtNTIyYzJlYTA3NmMwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA0MjM2OTcyLCJjc3JmIjoiOWFkMDcxODItYWVhZS00ZDZkLTkwZDAtNzllNGZlOWY1NTQxIiwiZXhwIjoxNzA0MjM3MDMyfQ.fjaSmm4NztN25X5Yfiz_Nh99Sm6JUQzFz7ff5hMLmeE
+token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNDMwNDgyMywianRpIjoiNWI0MTAzNzEtNzk3My00ZTYzLWE3NzctZTg5YjhjMzVjNTM1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA0MzA0ODIzLCJjc3JmIjoiZDllMDJjMzgtY2UxMC00Njk3LWFmNTYtNTUzYzBhNGMzYzMxIiwiZXhwIjoxNzA0MzA1NzIzfQ.Pvx2e9zSEKIhuKO7BLD-mFGAzkHM1VQ8TboEOyl2zvw
 refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNDIzOTQyMCwianRpIjoiYWM5ZGFmMzktMDI4NS00ZDlkLThiOWYtMzU4MmMzMTliMzc3IiwidHlwZSI6InJlZnJlc2giLCJzdWIiOjEsIm5iZiI6MTcwNDIzOTQyMCwiY3NyZiI6ImY1NjkxZmEwLWNiNmQtNDVjYy04MDQ4LTQ3ZTI3ODY2MmYzMyIsImV4cCI6MTcwNjgzMTQyMH0.N146Y9zqLM8wZiLN4Eo_h76y7F3nduYIh99y0au972Q
 Accept: application/json
 Authorization: Bearer :token
@@ -31,7 +31,7 @@ GET /contas/4
 --
 POST /contas
 {
-  "nome": "Itaú",
+  "nome": "Nubank",
   "resumo": "Conta física digital",
   "valor": 1000
 }
@@ -61,7 +61,7 @@ POST /operacoes
   "resumo": "Treta",
   "custo": 100,
   "tipo": "entrada",
-  "conta_id": 4
+  "conta_id": 7
 }
 
 # Recupera todas as operacoes
