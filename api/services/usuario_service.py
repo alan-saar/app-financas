@@ -12,7 +12,7 @@ def cadastrar_usuario(usuario):
     return usuario_db
 
 
-def lista_usuario_email(email):
+def listar_usuario_email(email):
     return usuario_model.Usuario.query.filter_by(email=email).first()
 
 
