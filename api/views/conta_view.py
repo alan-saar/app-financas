@@ -6,6 +6,7 @@ from ..services import conta_service
 from api import api
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from ..decorators.autorizacao import user_conta
+from ..decorators.api_key import require_apikey
 
 
 class ContaList(Resource):
