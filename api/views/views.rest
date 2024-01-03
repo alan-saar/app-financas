@@ -6,7 +6,7 @@
 
 // Global definitions of the queries
 http://localhost:5000
-token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNDMwNDgyMywianRpIjoiNWI0MTAzNzEtNzk3My00ZTYzLWE3NzctZTg5YjhjMzVjNTM1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA0MzA0ODIzLCJjc3JmIjoiZDllMDJjMzgtY2UxMC00Njk3LWFmNTYtNTUzYzBhNGMzYzMxIiwiZXhwIjoxNzA0MzA1NzIzfQ.Pvx2e9zSEKIhuKO7BLD-mFGAzkHM1VQ8TboEOyl2zvw
+token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNDMwNjA2NiwianRpIjoiMGJmNTJhYjEtYThmNS00ZmM0LWJmYjItMTI5OGViNWU0MDhjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA0MzA2MDY2LCJjc3JmIjoiMmU0ODA1YWItYmNjOS00YjA1LWJiYzItOTIxN2Q5MWZmYTgyIiwiZXhwIjoxNzA0MzA2OTY2fQ.caPTwE5VwToBCZ2bp0dL1Xy4KLDw-Rm5kpisI5vRbfY
 refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwNDIzOTQyMCwianRpIjoiYWM5ZGFmMzktMDI4NS00ZDlkLThiOWYtMzU4MmMzMTliMzc3IiwidHlwZSI6InJlZnJlc2giLCJzdWIiOjEsIm5iZiI6MTcwNDIzOTQyMCwiY3NyZiI6ImY1NjkxZmEwLWNiNmQtNDVjYy04MDQ4LTQ3ZTI3ODY2MmYzMyIsImV4cCI6MTcwNjgzMTQyMH0.N146Y9zqLM8wZiLN4Eo_h76y7F3nduYIh99y0au972Q
 Accept: application/json
 Authorization: Bearer :token
@@ -14,6 +14,19 @@ Authorization: Bearer :token
 -i # fica bonito
 #-v # verbose do curl
 --
+
+# Fazer login
+--
+POST /login
+{
+  "email" : "fulano@email.com",
+  "senha" : "1234"
+}
+
+# Refresh token
+--
+Authorization: Bearer :refresh_token
+POST /token/refresh
 
 # Raiz
 --
@@ -25,7 +38,7 @@ GET /contas
 
 # Mosta uma conta por id
 --
-GET /contas/4
+GET /contas/7
 
 # Cria uma conta
 --
@@ -70,7 +83,7 @@ GET /operacoes
 
 # OPeracao por id
 --
-GET /operacoes/1
+GET /operacoes/20
 
 # Altera uma operacao
 --
@@ -96,15 +109,3 @@ POST /usuarios
   "senha": "letmein"
 }
 
-# Fazer login
---
-POST /login
-{
-  "email" : "fulano@email.com",
-  "senha" : "1234"
-}
-
-# Refresh token
---
-Authorization: Bearer :refresh_token
-POST /token/refresh
