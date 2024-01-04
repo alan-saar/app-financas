@@ -44,9 +44,8 @@ GET /contas/7
 --
 POST /contas
 {
-  "nome": "Nubank",
-  "resumo": "Conta física digital",
-  "valor": 1000
+  "nome": "Inter",
+  "valor": 500
 }
 
 # Altera uma conta
@@ -70,11 +69,12 @@ GET /todos
 --
 POST /operacoes
 {
-  "nome": "Pix",
-  "resumo": "Treta",
+  "nome": "Cento de Salgados",
   "custo": 100,
-  "tipo": "entrada",
-  "conta_id": 7
+  "resumo": "Treta",
+  "data" : "2022-06-15",
+  "tipo": "saida",
+  "conta_id": 8
 }
 
 # Recupera todas as operacoes
