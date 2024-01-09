@@ -57,5 +57,4 @@ def altera_saldo_conta(conta_id, operacao, tipo_funcao, valor_antigo=None):
         else:
             conta.valor += operacao.custo
 
-
     db.session.commit()
